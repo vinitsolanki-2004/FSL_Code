@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.App {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 18px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-table th,
+.user-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.user-table th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn:hover {
+  background-color: #0056b3;
+}
+
+.user-table th,
+.user-table td,
+.user-table tr {
+  text-align: center;
+}
