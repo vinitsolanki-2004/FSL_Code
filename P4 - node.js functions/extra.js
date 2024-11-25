@@ -22,3 +22,8 @@ const asyncFunction = async () => {
 const users = ["Test1", "Test2", "Test3", "Test4", "Test5"]
 users.map(user => console.log(user))
 const filtered = users.filter(user => user == "Test1")
+
+func1();
+func2();
+func3();
+// asyncFunction();
