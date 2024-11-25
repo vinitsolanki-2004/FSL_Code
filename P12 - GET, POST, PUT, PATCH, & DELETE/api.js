@@ -1,64 +1,71 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
 
+// Enable CORS
+app.use(cors());
+
 app.use(express.json());
 
-let data = [
+let courses = [
     {
         id: 1,
-        price: 50000,
-        value: "Laptop"
+        name: "JavaScript Basics",
+        description: "Learn the fundamentals of JavaScript",
+        price: 100,
     },
     {
         id: 2,
-        price: 20000,
-        value: "Mobile"
+        name: "Python for Data Science",
+        description: "Analyze data with Python",
+        price: 150,
     },
     {
         id: 3,
-        price: 5000,
-        value: "Headphones"
+        name: "React Advanced",
+        description: "Master React for web development",
+        price: 120,
     },
-    {
-        id: 4,
-        price: 2500,
-        value: "Watch"
-    }
 ];
 
-app.get("/product", (req, res) => {
-    res.json(data)
+app.get("/", (req, res) => {
+    res.send("Welcome to the Course API!");
 });
 
-app.post("/product", (req, res) => {
-    const { value } = req.body
-    const newItem = { id: Date.now(), value };
-    data.push(newItem);
-    res.json(newItem);
+app.get("/courses", (req, res) => {
+    res.json(courses);
 });
 
-app.put("/product/:id", (req, res) => {
-    const { id } = req.params
-    const { value } = req.body
+app.post("/courses", (req, res) => {
+    const { name, description, price } = req.body;
+    const newCourse = { id: Date.now(), name, description, price };
+    courses.push(newCourse);
+    res.json(newCourse);
+});
 
-    const item = data.find(i => i.id == id);
+app.put("/courses/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, description, price } = req.body;
 
-    if (item) {
-        item.value = value;
-        res.json(item);
+    const course = courses.find((c) => c.id == id);
+
+    if (course) {
+        course.name = name;
+        course.description = description;
+        course.price = price;
+        res.json(course);
+    } else {
+        res.status(404).json({ message: "Course not found" });
     }
-    else {
-        res.status(404).json({ message: "Item not found" })
-    }
 });
 
-app.delete("/product/:id", (req, res) => {
-    const { id } = req.params
-    data = data.filter((i) => i.id != id);
-    res.json({ message: "Item Deleted" });
+app.delete("/courses/:id", (req, res) => {
+    const { id } = req.params;
+    courses = courses.filter((c) => c.id != id);
+    res.json({ message: "Course deleted" });
 });
 
 app.listen(5000, () => {
-    console.log("Server running on port 5000")
+    console.log("Server running on port 5000");
 });

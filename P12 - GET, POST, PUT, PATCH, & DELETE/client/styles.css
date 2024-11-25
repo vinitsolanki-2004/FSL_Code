@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .form {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form input {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .form button {
+    padding: 10px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .form button:hover {
+    background-color: #218838;
+  }
+  
+  .course-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .course-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .course-item h3 {
+    margin: 0;
+  }
+  
+  .course-item p {
+    margin: 5px 0;
+  }
+  
+  .course-item button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .course-item button:hover {
+    opacity: 0.9;
+  }
+  
+  .course-item button:nth-child(1) {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .course-item button:nth-child(1):hover {
+    background-color: #0056b3;
+  }
+  
+  .course-item button:nth-child(2) {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .course-item button:nth-child(2):hover {
+    background-color: #c82333;
+  }
